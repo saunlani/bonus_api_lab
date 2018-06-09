@@ -1,0 +1,27 @@
+﻿<script>
+    function submitselect() {
+        document.getElementById("selector").submit();
+        //window.location = "GetRandomFact";
+    }
+</script>
+@{
+    ViewBag.Title = "GetRandomFact";
+}
+
+<h2>Get A Random Fact</h2>
+
+Select a fact type and press submit to retrieve a random fact.<br />
+                                                              <form id="selector" action="/Home/GetRandomFact">
+                                                                  <select name="type" onchange="submitselect(this.value)">
+                                                                      <option value=""></option>
+                                                                      <option value="trivia">Trivia</option>
+                                                                      <option value="math">Math</option>
+                                                                      <option value="date">Date</option>
+                                                                      <option value="year">Year</option>
+                                                                  </select><br />
+                                                              </form>
+<br />
+@if (@ViewBag.Fact != null)
+{
+    <p><b>Fact:</b> @ViewBag.Fact</p>
+}

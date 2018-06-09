@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "GetFact";
+}
+
+<h2>Get Fact By Date</h2>
+
+Enter a day and month to get a random fact for that date.<br /><br />
+
+<form action="GetFact">
+    <b>Day:</b><br>
+    <input type="text" name="day" />
+    <br>
+    <b> Month:</b><br>
+    <input type="text" name="month" />
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+<br />
+@if (@ViewBag.Fact != null)
+{
+    <p><b>Year:</b> @ViewBag.Year</p>
+    <p><b>Fact:</b> @ViewBag.Fact</p>
+}
